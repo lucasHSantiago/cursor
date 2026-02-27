@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaults
 [
   // NAVIGATION
   {
@@ -208,7 +207,7 @@
   },
   {
     "key": "ctrl+shift+space",
-    "command": "-composer.toggleVoiceDictation",
+    "command": "-composer.toggleVoiceDictation go.to",
     "when": "!terminalFocus"
-  },
+  }
 ]

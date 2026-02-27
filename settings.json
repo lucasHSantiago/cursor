@@ -13,6 +13,46 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
+                "-"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.open"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<cr>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.select"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<c-l>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.refresh"
+                }
+            ]
+        },
+        {
+            "before": [
+                "`"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.cd"
+                }
+            ]
+        },
+        {
+            "before": [
                 "<C-d>"
             ],
             "after": [
@@ -277,6 +317,75 @@
             "commands": [
                 "workbench.action.navigateForward"
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "go.toggle.test.file"
+            ]
+        },
+        {
+            "before": [
+                "-"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.open"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<CR>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.select"
+                }
+            ]
+        },
+        {
+            "before": [
+                "-"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.open"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<cr>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.select"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<c-l>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.refresh"
+                }
+            ]
+        },
+        {
+            "before": [
+                "`"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.cd"
+                }
+            ]
         }
     ],
     "vim.visualModeKeyBindings": [
@@ -356,8 +465,9 @@
                 "_",
                 "x"
             ]
-        }
+        },
     ],
+    "oil-code.disableDefaultKeymaps": true,
     "update.showReleaseNotes": false,
     "window.menuBarVisibility": "toggle",
     "window.commandCenter": false,
@@ -367,16 +477,25 @@
     "workbench.startupEditor": "none",
     "workbench.editor.showTabs": "single",
     "workbench.colorCustomizations": {
-        "editorCursor.background": "#000000",
-        "editorCursor.foreground": "#ffffff",
-        "terminalCursor.background": "#000000",
-        "terminalCursor.foreground": "#ffffff"
+        "[Default Dark Modern]": {
+            "editorCursor.foreground": "#ffffff",
+            "editorCursor.background": "#000000",
+            "terminalCursor.foreground": "#ffffff",
+            "terminalCursor.background": "#000000"
+        },
+        "[Default Light Modern]": {
+            "editorCursor.foreground": "#000000",
+            "editorCursor.background": "#ffffff",
+            "terminalCursor.foreground": "#000000",
+            "terminalCursor.background": "#ffffff"
+        }
     },
-    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontSize": 12,
-    "editor.fontFamily": "JetBrains Mono",
+    // editor
+    "editor.fontFamily": "Iosevka",
     "editor.fontSize": 12,
-    "editor.lineHeight": 18,
+    "editor.lineHeight": 17,
     "editor.fontWeight": "normal",
     "editor.fontLigatures": true,
     "editor.occurrencesHighlight": "off",
@@ -403,24 +522,21 @@
     "editor.cursorSurroundingLines": 10,
     "git.decorations.enabled": false,
     "scm.diffDecorations": "none",
-    "ActiveFileInStatusBar.fullpath": false,
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.showTabs": "none",
-    "chat.commandCenter.enabled": false,
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
     "go.toolsManagement.autoUpdate": true,
     "search.exclude": {
         "**/vendor/**": true
     },
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "symbols",
     "git.autofetch": true,
     "makefile.configureOnOpen": true,
     "debug.closeReadonlyTabsOnEnd": true,
     "debug.console.closeOnEnd": true,
     "debug.openExplorerOnEnd": true,
-    "github.copilot.nextEditSuggestions.enabled": true,
     "excalidraw.theme": "dark",
     "docker.extension.dockerEngineAvailabilityPrompt": false,
     "remote.extensionKind": {
@@ -431,7 +547,6 @@
             "ui"
         ]
     },
-    "workbench.colorTheme": "Default Dark Modern",
     "cursor.cpp.disabledLanguages": [
         "markdown",
         "scminput"
@@ -440,13 +555,58 @@
     // golang
     "go.goroot": "/home/lucas/.gvm/gos/go1.25.0",
     "go.gopath": "/home/lucas/.gvm/pkgsets/go1.25.0/global",
+    // golint
     "go.lintTool": "golangci-lint-v2",
     "go.lintFlags": [
-        "--enable=unused,errcheck,staticcheck,govet,misspell,gocyclo",
+        "--enable=unused,unparam,errcheck,staticcheck,govet,misspell,gocyclo",
     ],
-    // golint
     "go.lintOnSave": "workspace",
     "go.formatTool": "goimports",
     "notebook.stickyScroll.enabled": true,
-    "docker.extension.enableComposeLanguageServer": false
+    "docker.extension.enableComposeLanguageServer": false,
+    "catppuccin.italicKeywords": false,
+    "catppuccin.italicComments": false,
+    "workbench.colorTheme": "Acme",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "-"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.open"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<cr>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.select"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<c-l>"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.refresh"
+                }
+            ]
+        },
+        {
+            "before": [
+                "`"
+            ],
+            "commands": [
+                {
+                    "command": "oil-code.cd"
+                }
+            ]
+        }
+    ],
 }
